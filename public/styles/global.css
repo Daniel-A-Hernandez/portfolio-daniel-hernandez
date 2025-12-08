@@ -4,7 +4,11 @@
     --bg :  radial-gradient(circle at 20% 20%, #0b0f27 0%, #02030a 100%);
 }
 body{
+    color: #e2e8f0;
     background: var(--bg);
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
 }
 .stars, .twinkling {
   position: fixed;

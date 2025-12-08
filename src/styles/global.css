@@ -15,13 +15,13 @@ body{
 }
 
 .stars {
-  background: transparent url('../assests/img/stardust.png') repeat;
+  background: transparent url('/public/img/stardust.png') repeat;
   animation: moveStars 200s linear infinite;
   z-index: 0;
 }
 
 .twinkling {
-  background: transparent url('../assests/img/dark-mosaic.png') repeat;
+  background: transparent url('/public/img/dark-mosaic.png') repeat;
   animation: twinkle 6s ease-in-out infinite alternate;
   z-index: 1;
 }

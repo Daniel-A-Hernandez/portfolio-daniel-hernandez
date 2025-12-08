@@ -1,0 +1,41 @@
+---
+import '../styles/global.css'
+import '../styles/global.css'
+
+const {title = "Daniel Hernandez - Portfolio"} = Astro.props ;
+---
+
+
+<html lang="es" class="scheme-light-dark">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{title}</title>
+
+    <body>
+        <div>
+            <header>
+                <div><img src="" alt=""></div>
+                <nav>
+                    <a href="">Github</a>
+                    <a href="">Linkedin</a>
+                </nav>
+            </header>
+
+        </div>
+       
+            
+            <main>
+                <slot />
+            </main>
+            
+            
+            </div>
+        </body>
+
+    <footer class="w-auto">
+        <p>@Daniel Hernandez {new Date().getFullYear()} </p>
+    </footer>
+
+</html>

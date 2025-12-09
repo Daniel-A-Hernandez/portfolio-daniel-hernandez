@@ -3,6 +3,7 @@
 :root{
     --bg :  radial-gradient(circle at 20% 20%, #0b0f27 0%, #02030a 100%);
 }
+
 body{
     color: #e2e8f0;
     background: var(--bg);
@@ -52,6 +53,7 @@ body{
    display: inline-block;
    text-decoration: none;
    margin-top:3rem;
+   margin-bottom: 2rem;
    font-weight: 600;
  }
  .btn:hover {

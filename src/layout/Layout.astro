@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import Header from '../components/Header.astro';
+import Nav from '../components/Navbar.astro';
 const {title = "Daniel Hernandez - Portfolio"} = Astro.props ;
 ---
 
@@ -12,29 +14,23 @@ const {title = "Daniel Hernandez - Portfolio"} = Astro.props ;
     </head>
 
     <body>
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div>
-            <header>
-                <nav>
-                    <a href="">Github</a>
-                    <a href="">Linkedin</a>
-                </nav>
-            </header>
+        <div class="stars z-0"></div><div class="twinkling z-0"></div>
+        <div class="relative z-10 p-2 max-w-[1100px] m-auto text-center ">
+                <Header class="flex justify-between items-center mb-20  ">
+                    
 
-        </div>
-       
+                </Header>
             
-            <main>
-                <slot />
-            </main>
+        <main>
+            <slot />
+        </main>
             
             
-            </div>
-        </body>
-
-    <footer class="w-auto">
-        <p>@Daniel Hernandez {new Date().getFullYear()} </p>
-    </footer>
-
+        
+        <footer class="w-auto">
+            <p>@Daniel Hernandez {new Date().getFullYear()} </p>
+        </footer>
+    </div>
+    
+    </body>
 </html>

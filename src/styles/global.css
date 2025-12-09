@@ -39,3 +39,52 @@ body{
   0% { opacity: 0.2; }
   100% { opacity: 1; }
 }
+
+.btn {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
+.btn{
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   border-radius: 10px;
+   display: inline-block;
+   text-decoration: none;
+   margin-top:3rem;
+   font-weight: 600;
+ }
+ .btn:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   transform: scale(1.02);
+   box-shadow: 0 0 10px rgba(124,58,237,0.5);
+ }
+ .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid rgba(124,58,237,0.7);
+  box-shadow: 0 0 40px rgba(108, 38, 230, 0.562);
+  object-fit: cover;
+  animation: float 6s ease-in-out infinite;
+}
+.halo {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.4) 0%, transparent 70%);
+  animation: rotateHalo 10s linear infinite;
+}
+
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px); } }
+@keyframes rotateHalo { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+

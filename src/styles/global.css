@@ -5,7 +5,7 @@
 }
 
 body{
-    color: #e2e8f0;
+    color: #979797;
     background: var(--bg);
     overflow-x: hidden;
     min-height: 100vh;
@@ -37,8 +37,8 @@ body{
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.2; }
-  100% { opacity: 1; }
+  0% { opacity: .1; }
+  100% { opacity: .2; }
 }
 
 .btn {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
@@ -90,3 +90,10 @@ body{
 @keyframes rotateHalo { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
 
+.card {
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(124,58,237,0.4);
+}

@@ -1,22 +1,47 @@
 ---
+//IMPORTS COMPONENETS
 import Layout from "../layout/Layout.astro"
+import Card from "../components/Card.astro"
+//#########################################
 
+const cardA ={
+    title:"Landing Page Oficial de Autora",
+    descripcion:"Proyecto en el que diseño y mantengo la página oficial de la autora Alejandra Morales.",
+    tecnologias:['Astro', 'Tailwind', 'JavaScript'],
+    link:'https://daniel-a-hernandez.github.io/secretos/index.html'
+}
+const cardB ={
+    title:"Landing Page Rally Inovacion",
+    descripcion:"Proyecto creado para un desafío universitario latinoamericano, logrando el primer lugar en la sede de la Universidad Tecnológica de El Salvador.",
+    tecnologias:['HTML5', 'CSS3', 'JavaScript'],
+    link:'https://daniel-a-hernandez.github.io/secretos/index.html'
+}
 ---
 
 <Layout>
 
     <section class="grid grid-cols-1  items-center gap-10 mt-5 md:grid-cols-2">
         <article >
-            <h1 class="text-3xl mb-1 font-bold text-white">Daniel Hernández</h1>
-            <p class="pt-10 px-2.5 w-auto h-auto text-pretty text-justify lg:text-left lg:px-0 ">Frontend Developer junior Daniel destaca como frontend developer con una marcada inclinación por el diseño responsivo, la creación de interfaces modernas y la integración de tecnologías emergentes.</p>
+            <h1 class="text-3xl mb-1 font-bold text-white ">Daniel Hernández</h1>
+            <p class="pt-10 px-2.5 w-auto h-auto font-semibold text-pretty text-justify lg:text-left lg:px-0 ">Frontend Developer junior Daniel destaca como frontend developer con una marcada inclinación por el diseño responsivo, la creación de interfaces modernas y la integración de tecnologías emergentes.</p>
             <a href="/curriculum-daniel-hernandez.pdf" download="" class="btn ">DESCARGAR CV</a>    
         </article>
         <div class="photo">
             <div class="halo"></div>
             <img src="/img/Daniel.jpeg" alt="">
         </div>
-
     </section>
+    <span class=" text-white max-w-[1100px] h-auto flex justify-center  mt-10 text-3xl font-bold ">PROYECTOS</span>
+
+    
+    <div class="mt-12 grid gap-6 grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]">
+    
+      <Card {...cardA}></Card>
+      <Card {...cardB}></Card>
+      <Card {...cardB}></Card>
+    
+    </div>
+    
 
 
 

@@ -1,0 +1,31 @@
+---
+    const {title, descripcion, link, tecnologias = []} = Astro.props;
+
+---
+
+    
+
+
+
+<div class="card bg-[#ffffff0d] max-w-sm rounded-2xl  overflow-hidden shadow-lg p-4 m-2  ">
+    <div>
+        <h1 class="font-bold text-xl mb-2 text-[#FAF9F6]">{title}<h1/>
+        
+        <p class="py-4 text-base h-35">{descripcion}</p>
+        <div class="flex flex-row justify-start items-center">
+            {tecnologias.map((tec:string)=>(
+                <span class="flex items-center bg-[#6031b4] rounded-full px-3  h-8 text-sm font-semibold  mr-2 ">{tec}</span>
+                
+                
+            ))}
+            
+        
+            <a href="#" class="font-medium text-fg-brand hover:underline">web</a>
+
+                
+        </div>
+    
+</div>
+</div>
+
+

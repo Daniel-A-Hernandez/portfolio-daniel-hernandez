@@ -205,3 +205,26 @@ body{
   width: 100%;
   fill: rgb(14, 14, 14);
 }
+
+
+.slide-track {
+  display: flex;
+  width: calc(190px * 14);
+  animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.slide_img {
+  width: 64px;
+  height: 64px;
+  opacity: 0.8;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.slide_img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/**/

@@ -5,22 +5,6 @@ import Card from "../components/Card.astro"
 import Carusel from "../components/carusel.astro"
 //#########################################
 
-const cardA ={
-    title:"Landing Page Oficial de Autora",
-    descripcion:"Proyecto en el que diseño y mantengo la página oficial de la autora Alejandra Morales.",
-    tecnologias:['Astro', 'Tailwind', 'JavaScript'],
-    link:'https://daniel-a-hernandez.github.io/secretos/index.html'
-}
-const cardB ={
-    title:"Landing Page Rally Inovacion",
-    descripcion:"Proyecto creado para un desafío universitario latinoamericano, logrando el primer lugar en la sede de la Universidad Tecnológica de El Salvador.",
-    tecnologias:['HTML5', 'CSS3', 'JavaScript'],
-    link:'https://daniel-a-hernandez.github.io/secretos/index.html'
-}
-
-
-//SLIDE STYLES
-const {slide_styles = "w-[190px] flex justify-center items-center p-2.5"} = Astro.props;
 ---
 
 <Layout>
@@ -49,14 +33,24 @@ const {slide_styles = "w-[190px] flex justify-center items-center p-2.5"} = Astr
     </section>
 
 
-    <span class=" text-white max-w-[1100px] h-auto flex justify-center  mt-10 text-3xl font-bold ">PROYECTOS</span>
+    <h2 class=" text-white max-w-[1100px] flex justify-center  mt-10 text-3xl font-bold ">PROYECTOS</h2>
     
     
-    <div class="mt-12 grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+    <div class="mt-12 grid gap-6  grid-cols-[repeat(auto-fit,minmax(300px,1fr))] p-2">
 
-        <Card {...cardA}></Card>
-        <Card {...cardB}></Card>
-        <Card {...cardB}></Card>
+        <Card
+            title = `Rally Latinoamericano de Innovación 2025`,
+            descripcion = `Proyecto ganador del primer lugar en impacto social en el Rally Latinoamericano de Innovación 2025 (sede UTEC).
+            Desarrollo autónomo de una web pública como apoyo a la presentación del proyecto.`,
+            link = `https://daniel-a-hernandez.github.io/codex-KEI/`,
+            repo = `https://github.com/Daniel-A-Hernandez/codex-KEI`
+        
+        >
+         
+    
+        </Card>
+        <Card></Card>
+        <Card></Card>
         
     </div>
 

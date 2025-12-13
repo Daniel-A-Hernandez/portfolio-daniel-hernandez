@@ -1,0 +1,59 @@
+---
+const imagenes = [
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    invert: false
+  },
+  {
+    src: '/img/Astro.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+    invert: false
+  },
+  {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    invert: true
+  }
+];
+
+const imagenesDuplicadas = [...imagenes, ...imagenes]; // Duplicar el arreglo para el efecto infinito
+---
+    <section class="mt-16 overflow-hidden relative text-center">
+        <div class="w-full overflow-hidden relative">
+            <div class="slide-track">
+        
+                {imagenesDuplicadas.map((imagen) => (
+                        <div class="w-[190px] flex justify-center items-center p-2.5">
+                            <img
+                             class="slide_img " 
+                             src={imagen.src} 
+                             style={imagen.invert ? 'filter: brightness(0) invert(1)' : ''} />
+                        </div>
+                    
+                ))}
+            </div>
+
+        </div>
+    </section>

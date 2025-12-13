@@ -2,6 +2,7 @@
 //IMPORTS COMPONENETS
 import Layout from "../layout/Layout.astro"
 import Card from "../components/Card.astro"
+import Carusel from "../components/carusel.astro"
 //#########################################
 
 const cardA ={
@@ -60,38 +61,11 @@ const {slide_styles = "w-[190px] flex justify-center items-center p-2.5"} = Astr
     </div>
 
     <span class=" text-white max-w-[1100px] h-auto flex justify-center  mt-10 text-3xl font-bold ">TECNOLOGIAS</span>
+    
+   <Carusel>
+    
+   </Carusel>
 
-    <section class="mt-16 overflow-hidden relative text-center">
-        <div class="w-full overflow-hidden relative">
-            <div class="slide-track">
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
-                <div class={slide_styles}><img class="slide_img" src="/img/Astro.svg" alt="Astro"/></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" /></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: brightness(0) invert(1);"/></div>
-          
-          
-
-                    <!--ICONS DUPLICADOS PARA EFECTO INFINITO-->
-
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
-                <div class={slide_styles}><img class="slide_img" src="/img/Astro.svg" alt="Astro"/></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" /></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
-                <div class={slide_styles}><img class="slide_img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: brightness(0) invert(1);"/></div>
-          
-            </div>
-
-        </div>
-    </section>
 
 
 

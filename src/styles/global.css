@@ -5,6 +5,7 @@
 }
 /*Body index styles*/
 body{
+  font-family: "Manrope", system-ui, sans-serif;
     color: #979797;
     background: var(--bg);
     overflow-x: hidden;
@@ -228,7 +229,7 @@ body{
   --accent-glow: rgba(0, 82, 204, 0.35);
   --brand-gradient: linear-gradient(135deg, #0052cc, #2684ff);
   
-  font-family: "Inter", system-ui, sans-serif;
+  
   width: 100%;
   max-width: 400px;
   background-color: var(--bg-color);

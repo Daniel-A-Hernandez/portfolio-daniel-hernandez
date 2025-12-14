@@ -1,6 +1,6 @@
 ---
-    const {title, descripcion,nombre_proyecto, link,repo,} = Astro.props;
-
+    const {title, descripcion,link,repo } = Astro.props;
+    
 ---
 
 <!-- From Uiverse.io by pharmacist-sabot --> 
@@ -9,10 +9,11 @@
   <div class="card-grid"></div>
 
   <div class="card-header">
-    <div class="brand-wrapper">
-      <h4 class="brand-text text-pretty">{title}</h4>
+    <!--TITLE CARD -->
+    <div class="title-wrapper">
+      <h4 class="title-card text-pretty">{title}</h4>
     </div>
-
+    <!--LINKS TO WEB & REPOS -->
     <div class="action-buttons">
       <button class="btn-icon" aria-label="Star this repo">
         <a href={link}>
@@ -27,14 +28,13 @@
       </button>
     </div>
   </div>
-
+  <!--BODY CARD CONTENT-->
   <div class="card-body">
-    <p class="repo-description lg:text-left">{descripcion}</p>
-
+    <p class="card-description lg:text-left">{descripcion}</p>
     <div class="tag-wrapper">
-        <span class="badge badge-html">HTML</span>
-        <span class="badge badge-css">CSS</span>
-      <span class="badge badge-js">JS</span>
+      <span class="badge-html badge" >HTML</span>
+      <span class="badge-css badge" >CSS</span>
+      <span class="badge-js badge" >JS</span>
 
     </div>
   </div>

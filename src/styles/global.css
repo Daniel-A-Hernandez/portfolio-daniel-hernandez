@@ -51,26 +51,39 @@ body{
   =====================
 */
 
-.btn {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
-.btn{
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  border-radius: 10px;
-  display: inline-block;
-  text-decoration: none;
-  margin-top:3rem;
-  margin-bottom: 2rem;
+/* From Uiverse.io by adamgiebl */ 
+.btn_donwloadCV{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   font-weight: 600;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  letter-spacing: 0.05em;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 2px solid  #302b63;
 }
-.btn:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  transform: scale(1.02);
-  box-shadow: 0 0 10px rgba(124,58,237,0.5);
+
+.btn_donwloadCV svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn_donwloadCV span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn_donwloadCV:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.btn_donwloadCV:hover span {
+  transform: translateX(7px);
 }
  
 /*==========================
@@ -90,8 +103,9 @@ body{
   position: relative;
   transition-duration: .5s;
   cursor: pointer;
-  box-shadow: 0 0 40px #6c26e68f;
-  border: 3px solid #7c3aed82;
+  box-shadow: 0 0 40px #2684ff80;
+  border: 3px solid #2684ff80;
+
   border-radius: 16px;
 }
 

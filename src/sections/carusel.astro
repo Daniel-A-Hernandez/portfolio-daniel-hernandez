@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 const imagenes = [
   {
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
@@ -46,13 +48,19 @@ const imagenesDuplicadas = [...imagenes, ...imagenes]; // Duplicar el arreglo pa
         
                 {imagenesDuplicadas.map((imagen) => (
                         <div class="w-[190px] flex justify-center items-center p-2.5">
-                            <img
-                             class="slide_img " 
+                            <Image
+                             class="slide_img"
+                             width="24"
+                             height="24" 
                              src={imagen.src} 
-                             style={imagen.invert ? 'filter: brightness(0) invert(1)' : ''} />
+                             style={imagen.invert ? 'filter: brightness(0) invert(1)' : ''}
+                             alt="logo tecnologia" 
+                             />
+
                         </div>
                     
-                ))}
+                    
+                  ))}
             </div>
 
         </div>

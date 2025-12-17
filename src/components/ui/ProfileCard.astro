@@ -1,8 +1,10 @@
 ---
+
+import {Image} from 'astro:assets';
+import image_profile from '/src/assets/Daniel.jpeg'
 interface Props{
     name: string
     rol: string
-    image: string
     github?: string 
     linkedin?: string 
     instagram?: string 
@@ -11,7 +13,6 @@ interface Props{
 const{
     name,
     rol,
-    image,
     github,
     linkedin,
     instagram
@@ -21,7 +22,11 @@ const{
 
     <!-- From Uiverse.io by vinodjangid07 --> 
     <div class="cardContainer">
-    <img class="profileDiv " src={image} alt="- imagen sobre Daniel Hernandez">
+    <Image 
+        class="profileDiv"
+        src={image_profile}
+        alt="imagen sobre Daniel Hernandez"
+    />
         <div class="infoDiv">
         <div class="nameDiv">
             <p class="name">{name}</p>

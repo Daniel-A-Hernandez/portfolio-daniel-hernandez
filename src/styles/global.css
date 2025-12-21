@@ -55,10 +55,11 @@ body{
 .btn_donwloadCV{
   display: flex;
   align-items: center;
+  width: 160px;
   cursor: pointer;
   font-weight: 600;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 15px ;
   padding: 0.8em 1.3em 0.8em 0.9em;
   color: white;
   background: linear-gradient(135deg, #2563eb, #7c3aed);
@@ -67,6 +68,7 @@ body{
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: 2px solid  #302b63;
+  text-transform: uppercase;
 }
 
 .btn_donwloadCV svg {
@@ -86,7 +88,13 @@ body{
 .btn_donwloadCV:hover span {
   transform: translateX(7px);
 }
- 
+.buttons:last-child svg{
+  display: none;
+  visibility: hidden;
+}
+
+
+
 /*==========================
   INFO ABOUTME STYLES
   ==========================

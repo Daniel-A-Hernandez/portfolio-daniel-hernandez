@@ -1,8 +1,22 @@
 ---
-import Navbar from './Navbar.astro';
+import {Image} from "astro:assets"
+import dandev_logo from "/src/assets/dandev_logo.ico"
+import avatar from "/src/assets/daniel_avatar.png"
 ---
 
 <header class="flex justify-between items-center m-2">
-    <div><img src="/img/daniel_avatar.png" alt="" class="w-[130px] h-auto grid items-center "></div>
-    <Navbar/> 
+    <Image
+        src={dandev_logo}
+        alt="Logo dandev"
+        width={120}
+        height={120}
+     />
+     
+     <Image 
+        src={avatar}
+        alt="Avatar de Daniel Hernandez"
+        width={110}
+        height={110}
+    />
+
 </header>

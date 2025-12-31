@@ -422,17 +422,15 @@ body{
 /* TS Tag */
 .badge-ts {
   background-color: rgba(49, 120, 198, 0.1);
-  color: #1572B6;
-  border: 1px solid rgba(49, 120, 198, 0.2);
+  color: #3178c6;
+  border: 1px solid rgba(49, 120, 198, 0.25);
 }
 
 .badge-ts:hover {
   background-color: rgba(49, 120, 198, 0.2);
-  box-shadow: 0 0 12px rgba(49, 120, 198, 0.3);
+  box-shadow: 0 0 12px rgba(49, 120, 198, 0.25);
   transform: translateY(-1px);
 }
-
-
 
 /* JS Tag */
 .badge-js {
@@ -446,5 +444,33 @@ body{
   box-shadow: 0 0 12px rgba(247, 223, 30, 0.2);
   transform: translateY(-1px);
 }
+
+/* ASTRO Tag */
+.badge-astro {
+  background-color: rgba(255, 93, 1, 0.1);
+  color: #ff5d01;
+  border: 1px solid rgba(255, 93, 1, 0.25);
+}
+
+.badge-astro:hover {
+  background-color: rgba(255, 93, 1, 0.2);
+  box-shadow: 0 0 12px rgba(255, 93, 1, 0.25);
+  transform: translateY(-1px);
+}
+
+
+/* Tailwind Tag */
+.badge-tailwind {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.badge-tailwind:hover {
+  background-color: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+  transform: translateY(-1px);
+}
+
 
 

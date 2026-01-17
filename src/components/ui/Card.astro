@@ -1,5 +1,5 @@
 ---
-import { jsx } from "astro/jsx-runtime";
+import {proyects} from '../../data/proyects'
 import Badges from "./Badges.astro";
 interface Props {
   title: string;
@@ -27,14 +27,16 @@ interface Props {
 ---
 
 <!-- From Uiverse.io by pharmacist-sabot --> 
-<div class="nhost-card">
+ {proyects.map((value)=> (
+
+  <div class="nhost-card">
   <div class="card-glow"></div>
   <div class="card-grid"></div>
 
   <div class="card-header">
     <!--TITLE CARD -->
     <div class="title-wrapper">
-      <h4 class="title-card text-pretty">{title}</h4>
+      <h4 class="title-card text-pretty">{value.name}</h4>
     </div>
     <!--LINKS TO WEB & REPOS -->
     <div class="action-buttons">
@@ -70,5 +72,6 @@ interface Props {
   </div>
 </div>
 
+    ))}
 
 

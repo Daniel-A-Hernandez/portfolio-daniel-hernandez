@@ -1,10 +1,11 @@
-import taco_express from '@/assets/taco-express.jpg'
+import taco_express from '@/assets/taco-express.jpg';
+import KEI from "@/assets/KEI.png"
 
 
 
 export const proyects = [
     {
-        img:"",
+        img:KEI.src,
         name: "Rally Latinoamericano de Innovación 2025",
         description: "Proyecto ganador del primer lugar en impacto social en el Rally Latinoamericano de Innovación 2025 (sede UTEC).",
         link:"",

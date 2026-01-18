@@ -1,77 +1,46 @@
 ---
-import {proyects} from '../../data/proyects'
-import Badges from "./Badges.astro";
-interface Props {
-  title: string;
-  descripcion: string;
-  link: string;
-  html?: boolean;
-  css?: boolean;
-  js?: boolean;
-  typescript?: boolean;
-  astro?: boolean;
-  tailwind?: boolean;
-}    
-    const {
-      title,
-      descripcion,
-      link,
-      html = false, 
-      css = false,
-      js = false,
-      typescript = false, 
-      astro = false, 
-      tailwind = false
-    } = Astro.props;
-
+import { proyects } from '@/data/proyects'
+import { SquareArrowUpRight } from '@lucide/astro';
 ---
 
-<!-- From Uiverse.io by pharmacist-sabot --> 
- {proyects.map((value)=> (
-
-  <div class="nhost-card">
-  <div class="card-glow"></div>
-  <div class="card-grid"></div>
-
-  <div class="card-header">
-    <!--TITLE CARD -->
-    <div class="title-wrapper">
-      <h4 class="title-card text-pretty">{value.name}</h4>
-    </div>
-    <!--LINKS TO WEB & REPOS -->
-    <div class="action-buttons">
-      <button class="btn-icon" aria-label="Star this repo">
-        <a href={link} target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-globe-icon lucide-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
-        </a>
-      </button>
-    </div>
-  </div>
-  <!--BODY CARD CONTENT-->
-  <div class="card-body">
-    <p class="card-description text-slate-400 lg:text-left ">{descripcion}</p>
-
-      <!--TECHNOLOGIES BADGES-->
-    <div class="tag-wrapper">
-
-    {(html &&   <span class="badge-html badge">HTML</span>)}
-
-    {(css &&    <span class="badge-css badge">CSS</span>)}
-
-    {(js &&     <span class="badge-js badge">JS</span>)}
-
-    {(astro &&   <span class="badge-astro badge">ASTRO</span>)}
-    
-    {(tailwind &&   <span class="badge-tailwind badge">TAILWIND</span>)}
-    
-    {(typescript && <span class="badge-ts badge">TYPESCRIPT</span>)}
-    
-  </div>   
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {proyects.map((item) => (
+    <div class="group relative w-full max-w-[350px] h-full bg-[#1e293b] rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-[#38bdf8]/50 hover:shadow-2xl hover:shadow-sky-500/10 cursor-pointer flex flex-col">
+      
+      <!-- Image Area -->
+      <div class="relative h-44 w-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center overflow-hidden shrink-0">
+        <img src={item.img} alt="" class="object-cover w-full h-full" />
+        <div class="absolute inset-0 bg-[#38bdf8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      
+      <!-- Content Area -->
+      <div class="p-5 flex flex-col flex-1">
         
-    
-  </div>
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-[#f8fafc] text-xl font-semibold tracking-tight">
+            {item.name}
+          </h3>
+          <a href={item.link} target="_blank" > 
+            <SquareArrowUpRight  size={25} class="text-slate-400 hover:text-slate-500"/>
+           
+        </a>
+        </div>
+
+        <!-- Descripción con altura controlada -->
+        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 line-clamp-3">
+          {item.description}
+        </p>
+
+        <!-- Tags siempre abajo -->
+        <div class="flex flex-wrap gap-2 mt-auto">
+          {item.tecnologies.map((tecnology) => (
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20">
+              {tecnology}
+            </span>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  ))}
 </div>
-
-    ))}
-
-

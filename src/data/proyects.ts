@@ -24,7 +24,7 @@ export const proyects = [
         name: "Frame & Logic",
         description: "Proyecto independiente desarrollado de principio a fin, desde la conceptualización y el diseño hasta su implementación.",
         link:"https://framelogicsv.com",
-        tecnologies: ['Astro', 'Tailwind', 'Typescript', 'Preact']
+        tecnologies: ['Astro', 'Tailwind', 'Typescript', 'Preact','Cloudflare']
     }
     
 ]

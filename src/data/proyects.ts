@@ -1,4 +1,5 @@
 import taco_express from '@/assets/taco-express.jpg';
+import frame_logic from '@/assets/F&L-banner.png'
 import KEI from "@/assets/KEI.png"
 
 
@@ -8,7 +9,7 @@ export const proyects = [
         img:KEI.src,
         name: "Rally Latinoamericano de Innovación 2025",
         description: "Proyecto ganador del primer lugar en impacto social en el Rally Latinoamericano de Innovación 2025 (sede UTEC).",
-        link:"",
+        link:"https://daniel-a-hernandez.github.io/codex-KEI/",
         tecnologies: ['HTML', 'CSS', 'JS']
     },
     {
@@ -18,5 +19,12 @@ export const proyects = [
         link:"https://taco-express-web-site.pages.dev/",
         tecnologies:['ASTRO','TAILWIND','TYPESCRIPT', 'SUPABASE','Preact']
     },
+    {
+        img:frame_logic.src,
+        name: "Frame & Logic",
+        description: "Proyecto independiente desarrollado de principio a fin, desde la conceptualización y el diseño hasta su implementación.",
+        link:"https://framelogicsv.com",
+        tecnologies: ['Astro', 'Tailwind', 'Typescript', 'Preact']
+    }
     
 ]

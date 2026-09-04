@@ -6,6 +6,7 @@ import Carusel from "../sections/carusel.astro"
 import ProfileCard from "../components/ui/ProfileCard.astro"
 import Button from "../components/ui/button.astro"
 import Abilities from "../components/ui/Abillities.astro"
+import Contact from "../components/ui/Contact.astro"
 
 //#########################################
 
@@ -13,8 +14,7 @@ import Abilities from "../components/ui/Abillities.astro"
 
 <Layout>
     <!--SECCION DATOS PERSONALES E IMAGEN -->
-    <section class="grid grid-cols-1  items-center gap-10 mt-5 md:grid-cols-2">
-        <article >
+            <!--
             <h1 class="text-2xl mb-1 font-bold text-slate-400 ">Desarrollador de software enfocado en crear experiencias digitales. </h1>
            
             <p lang="es" class=" opacity-85 text-slate-400 pt-10 px-2.5 max-w-prose hyphens-auto text-justify [text-justify:inter-word] leading-relaxed text-pretty text-xl  lg:px-0" >
@@ -23,31 +23,23 @@ import Abilities from "../components/ui/Abillities.astro"
 
             </p>
             <span class="flex flex-row justify-center gap-5 lg:justify-normal">
-                <Button
-                document="https://wa.me/50375138755?text=Hola%20Daniel%20%0ATe%20escribo%20porque%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar%20contigo.%0AQuedo%20atento,%20gracias."
-
-                btn_name="Hablemos"
-                  
-                /> 
-                <Button 
-                document = "/curriculum-daniel-hernandez.pdf"
-                btn_name="DESCARGAR CV"
-                />
-            </span>
-
-        </article>
-        <ProfileCard
-            name="Daniel Hernandez"
-            rol="Desarrollador Software"
-            github="https://github.com/Daniel-A-Hernandez"
-            linkedin="https://www.linkedin.com/in/daniel-hernández-6a1220378"
-            instagram="https://www.instagram.com/danny_hdezzzz?igsh=d3BueDl3eTJzYmFz"
-        
-        />
+                -->
+                
+            </article>
+            <ProfileCard/>
+            <Button
+            document="https://wa.me/50375138755?text=Hola%20Daniel%20%0ATe%20escribo%20porque%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar%20contigo.%0AQuedo%20atento,%20gracias."
+            
+            btn_name="Hablemos"
+            
+            /> 
+            <Button 
+            document = "/curriculum-daniel-hernandez.pdf"
+            btn_name="DESCARGAR CV"
+            />
 
     
-    </section>
-
+            
 
     <h2 class=" text-white max-w-[1100px] flex justify-center  mt-10 text-3xl font-bold ">PROYECTOS</h2>
     
@@ -63,6 +55,7 @@ import Abilities from "../components/ui/Abillities.astro"
     <h2 class=" text-white max-w-[1100px] h-auto flex justify-center  mt-10 text-3xl font-bold ">TECNOLOGÍAS</h2>
     
     <Carusel/>
+    <Contact/>
     
 
 

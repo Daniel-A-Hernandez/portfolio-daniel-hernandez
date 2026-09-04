@@ -1,0 +1,415 @@
+---
+// Contact.astro
+
+const socials = [
+  {
+    name: "GitHub",
+    description: "Código y proyectos",
+    href: "https://github.com/Daniel-A-Hernandez",
+    type: "github",
+  },
+  {
+    name: "LinkedIn",
+    description: "Perfil profesional",
+    href: "https://www.linkedin.com/in/daniel-hern%C3%A1ndez-6a1220378",
+    type: "linkedin",
+  },
+  {
+    name: "Instagram",
+    description: "Contenido personal",
+    href: "https://www.instagram.com/danny_hdezzzz",
+    type: "instagram",
+  },
+  {
+    name: "Gmail",
+    description: "Contacto directo",
+    href: "mailto:hernandezdaniel.work@gmail.com    ",
+    type: "email",
+  },
+];
+---
+
+<section class="mt-24 mb-20">
+
+  <!-- Header -->
+  <div class="text-center mb-10">
+    <p
+      class="
+        text-xs
+        uppercase
+        tracking-[0.28em]
+        text-[#94a3b8]
+        mb-2
+        font-mono
+      "
+    >
+      Conectemos
+    </p>
+
+    <h2 class="text-white text-3xl font-bold">
+      CONTACTO
+    </h2>
+
+    <p
+      class="
+        text-[#94a3b8]
+        max-w-2xl
+        mx-auto
+        mt-3
+        text-sm
+        leading-relaxed
+      "
+    >
+      ¿Tienes una oportunidad, proyecto o simplemente quieres conversar
+      sobre tecnología? Estoy a un mensaje de distancia.
+    </p>
+  </div>
+
+  <!-- Layout -->
+  <div
+    class="
+      grid
+      grid-cols-1
+      lg:grid-cols-[1.15fr_.85fr]
+      gap-5
+    "
+  >
+
+    <!-- Terminal -->
+    <article
+      class="
+        relative
+        overflow-hidden
+        rounded-2xl
+        border
+        border-white/10
+        bg-[#0c111d]
+        p-6
+      "
+    >
+
+      <!-- Línea superior -->
+      <div
+        class="
+          absolute
+          top-0
+          left-0
+          w-full
+          h-px
+          bg-gradient-to-r
+          from-transparent
+          via-[#38bdf8]/70
+          to-transparent
+        "
+      ></div>
+
+      <!-- Terminal header -->
+      <div
+        class="
+          flex
+          items-center
+          gap-2
+          border-b
+          border-white/10
+          pb-4
+          mb-6
+        "
+      >
+
+        <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
+
+        <span
+          class="
+            ml-3
+            text-xs
+            font-mono
+            text-[#64748b]
+          "
+        >
+          daniel@portfolio:~/contact
+        </span>
+
+      </div>
+
+      <!-- Terminal content -->
+      <div
+        class="
+          font-mono
+          text-sm
+          leading-7
+          text-[#cbd5e1]
+        "
+      >
+
+        <div>
+          <p>
+            <span class="text-[#38bdf8]">$</span>
+            whoami
+          </p>
+
+          <p class="pl-4 text-[#94a3b8]">
+            Daniel Hernández — Software Developer
+          </p>
+        </div>
+
+        <div class="mt-4">
+          <p>
+            <span class="text-[#38bdf8]">$</span>
+            availability
+          </p>
+
+          <p class="pl-4 text-[#94a3b8]">
+            open_to = ["opportunities", "projects", "collaboration"]
+          </p>
+        </div>
+
+        <div class="mt-4">
+          <p>
+            <span class="text-[#38bdf8]">$</span>
+            contact --preferred
+          </p>
+
+          <p class="pl-4 text-[#94a3b8]">
+            → Email / LinkedIn
+          </p>
+        </div>
+
+        <!-- Cursor -->
+        <div class="flex items-center gap-2 mt-6">
+          <span class="text-[#38bdf8]">$</span>
+
+          <span class="text-[#94a3b8]">
+            send_message
+          </span>
+
+          <span
+            class="
+              terminal-cursor
+              inline-block
+              w-2
+              h-4
+              bg-[#38bdf8]
+            "
+          ></span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- Social cards -->
+    <div class="grid grid-cols-2 gap-3">
+
+      {
+        socials.map((social) => (
+
+          <a
+            href={social.href}
+            target={social.type === "email" ? undefined : "_blank"}
+            rel={social.type === "email" ? undefined : "noreferrer"}
+            aria-label={social.name}
+            class="
+              social-card
+              min-h-[135px]
+              p-4
+
+              flex
+              flex-col
+              justify-between
+
+              rounded-2xl
+              border
+              border-white/10
+
+              bg-[#0c111d]
+
+              transition-all
+              duration-300
+
+              hover:-translate-y-1
+              hover:border-[#38bdf8]/40
+              hover:bg-[#111827]
+
+              group
+            "
+          >
+
+            <!-- Icon row -->
+            <div class="flex justify-between items-start">
+
+              <div
+                class="
+                  w-10
+                  h-10
+
+                  flex
+                  items-center
+                  justify-center
+
+                  rounded-xl
+                  border
+                  border-white/10
+
+                  bg-white/[0.03]
+
+                  text-[#cbd5e1]
+
+                  group-hover:text-[#38bdf8]
+
+                  transition-colors
+                  duration-300
+                "
+              >
+
+                {
+                  social.type === "github" && (
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5"
+                      fill="currentColor"
+                    >
+                      <path d="M12 .7A12 12 0 0 0 8.21 24.09c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23A11.4 11.4 0 0 1 12 6.51c1.02 0 2.05.14 3.01.4 2.29-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .7Z" />
+                    </svg>
+                  )
+                }
+
+                {
+                  social.type === "linkedin" && (
+                    <span class="font-bold text-lg">
+                      in
+                    </span>
+                  )
+                }
+
+                {
+                  social.type === "instagram" && (
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5"
+                      />
+
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                      />
+
+                      <circle
+                        cx="17.4"
+                        cy="6.6"
+                        r="1"
+                        fill="currentColor"
+                        stroke="none"
+                      />
+                    </svg>
+                  )
+                }
+
+                {
+                  social.type === "email" && (
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <rect
+                        x="3"
+                        y="5"
+                        width="18"
+                        height="14"
+                        rx="2"
+                      />
+
+                      <path d="m4 7 8 6 8-6" />
+                    </svg>
+                  )
+                }
+
+              </div>
+
+              <span
+                class="
+                  text-[#64748b]
+                  group-hover:text-[#38bdf8]
+                  transition-colors
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+            <!-- Text -->
+            <div>
+              <p
+                class="
+                  text-[#f8fafc]
+                  font-semibold
+                "
+              >
+                {social.name}
+              </p>
+
+              <p
+                class="
+                  text-xs
+                  text-[#64748b]
+                  mt-1
+                "
+              >
+                {social.description}
+              </p>
+            </div>
+
+          </a>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  .terminal-cursor {
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .terminal-cursor {
+      animation: none;
+    }
+
+    .social-card {
+      transition: none;
+    }
+
+  }
+
+</style>

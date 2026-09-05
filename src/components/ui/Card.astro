@@ -1,46 +1,424 @@
 ---
-import { proyects } from '@/data/proyects'
-import { SquareArrowUpRight } from '@lucide/astro';
+import { proyects } from "@/data/proyects";
+
+const featuredProject =
+  proyects.find((project) => project.featured) ?? proyects[0];
+
+const secondaryProjects = proyects.filter(
+  (project) => project !== featuredProject
+);
 ---
 
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  {proyects.map((item) => (
-    <div class="group relative w-full max-w-[350px] h-full bg-[#0c111d] rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-[#38bdf8]/50 hover:shadow-2xl hover:shadow-sky-500/10 cursor-pointer flex flex-col">
-      
-      <!-- Image Area -->
-      <div class="relative h-44 w-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center overflow-hidden shrink-0">
-        <img src={item.img} alt="" class="object-cover w-full h-full" />
-        <div class="absolute inset-0 bg-[#38bdf8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      
-      <!-- Content Area -->
-      <div class="p-5 flex flex-col flex-1">
-        
-        <div class="flex justify-between items-center mb-2">
-          <h3 class="text-[#f8fafc] text-xl font-semibold tracking-tight">
-            {item.name}
-          </h3>
-          <a href={item.link} target="_blank" > 
-            <SquareArrowUpRight  size={25} class="text-slate-400 hover:text-slate-500"/>
-           
-        </a>
+<section class="mt-24 mb-24">
+  <!-- Header -->
+  <div class="text-center mb-10">
+    <p
+      class="
+        font-mono
+        text-xs
+        uppercase
+        tracking-[0.28em]
+        text-[#94a3b8]
+        mb-2
+      "
+    >
+      Trabajo seleccionado
+    </p>
+
+    <h2 class="text-white text-3xl font-bold">
+      PROYECTOS
+    </h2>
+
+    <p
+      class="
+        text-[#94a3b8]
+        text-sm
+        leading-relaxed
+        max-w-2xl
+        mx-auto
+        mt-3
+      "
+    >
+      Una selección de productos, proyectos y soluciones que he diseñado
+      y desarrollado.
+    </p>
+  </div>
+
+  <!-- Projects layout -->
+  <div
+    class="
+      grid
+      grid-cols-1
+      lg:grid-cols-[1.25fr_.75fr]
+      gap-4
+    "
+  >
+    <!-- Proyecto principal -->
+    <a
+      href={featuredProject.link}
+      target="_blank"
+      rel="noreferrer"
+      class="
+        project-card
+        group
+        relative
+
+        min-h-[420px]
+
+        overflow-hidden
+        rounded-2xl
+
+        border
+        border-white/10
+
+        bg-[#0c111d]
+
+        flex
+        flex-col
+      "
+    >
+      <!-- Image -->
+      <div class="relative h-[240px] overflow-hidden shrink-0">
+        <img
+          src={featuredProject.img}
+          alt={`Vista previa de ${featuredProject.name}`}
+          class="
+            w-full
+            h-full
+            object-cover
+
+            transition-transform
+            duration-500
+
+            group-hover:scale-[1.03]
+          "
+        />
+
+        <!-- Overlay -->
+        <div
+          class="
+            absolute
+            inset-0
+
+            bg-gradient-to-t
+            from-black/70
+            via-black/10
+            to-transparent
+          "
+        >
         </div>
 
-        <!-- Descripción con altura controlada -->
-        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 line-clamp-3">
-          {item.description}
-        </p>
+        <!-- Label -->
+        <span
+          class="
+            absolute
+            top-4
+            left-4
 
-        <!-- Tags siempre abajo -->
-        <div class="flex flex-wrap gap-2 mt-auto">
-          {item.tecnologies.map((tecnology) => (
-            <span class="px-3 py-1 rounded-full text-xs font-medium bg-[#0c111d] text-[#94a3b8] border  border-white/10">
-              {tecnology}
-            </span>
-          ))}
+            px-3
+            py-1
+
+            rounded-full
+
+            border
+            border-white/15
+
+            bg-black/30
+            backdrop-blur-md
+
+            text-white/80
+            text-[10px]
+            font-mono
+            uppercase
+            tracking-wider
+          "
+        >
+          {featuredProject.eyebrow}
+        </span>
+
+        <!-- Index -->
+        <span
+          class="
+            absolute
+            bottom-4
+            left-4
+
+            text-xs
+            font-mono
+            text-white/60
+          "
+        >
+          01 / Featured Project
+        </span>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6 flex flex-col flex-1">
+        <div class="flex justify-between items-start gap-5">
+          <div>
+            <h3
+              class="
+                text-[#f8fafc]
+                text-xl
+                md:text-2xl
+                font-semibold
+                tracking-tight
+              "
+            >
+              {featuredProject.name}
+            </h3>
+
+            <p
+              class="
+                text-[#94a3b8]
+                text-sm
+                leading-6
+                mt-3
+                max-w-xl
+              "
+            >
+              {featuredProject.description}
+            </p>
+          </div>
+
+          <!-- Arrow -->
+          <span
+            class="
+              text-[#64748b]
+              text-xl
+
+              transition-all
+              duration-300
+
+              group-hover:text-[#38bdf8]
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          >
+            ↗
+          </span>
         </div>
 
+        <!-- Technologies -->
+        <div class="flex flex-wrap gap-2 mt-auto pt-6">
+          {
+            featuredProject.tecnologies.map((technology) => (
+              <span
+                class="
+                  px-3
+                  py-1
+
+                  rounded-full
+
+                  border
+                  border-white/10
+
+                  bg-white/[0.025]
+
+                  text-[#94a3b8]
+                  text-xs
+                  font-mono
+                "
+              >
+                {technology}
+              </span>
+            ))
+          }
+        </div>
       </div>
+    </a>
+
+    <!-- Proyectos secundarios -->
+    <div class="grid gap-4">
+      {
+        secondaryProjects.map((project, index) => (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            class="
+              project-card
+              group
+
+              overflow-hidden
+
+              rounded-2xl
+
+              border
+              border-white/10
+
+              bg-[#0c111d]
+
+              flex
+              flex-col
+            "
+          >
+            <!-- Imagen -->
+            <div class="relative h-[145px] overflow-hidden shrink-0">
+              <img
+                src={project.img}
+                alt={`Vista previa de ${project.name}`}
+                class="
+                  w-full
+                  h-full
+                  object-cover
+
+                  transition-transform
+                  duration-500
+
+                  group-hover:scale-[1.04]
+                "
+              />
+
+              <div
+                class="
+                  absolute
+                  inset-0
+
+                  bg-gradient-to-t
+                  from-black/60
+                  via-transparent
+                  to-transparent
+                "
+              >
+              </div>
+
+              <span
+                class="
+                  absolute
+                  top-4
+                  left-4
+
+                  px-3
+                  py-1
+
+                  rounded-full
+
+                  border
+                  border-white/15
+
+                  bg-black/30
+                  backdrop-blur-md
+
+                  text-white/80
+                  text-[10px]
+                  font-mono
+                  uppercase
+                  tracking-wider
+                "
+              >
+                {project.eyebrow}
+              </span>
+
+              <span
+                class="
+                  absolute
+                  bottom-3
+                  right-4
+
+                  text-[10px]
+                  font-mono
+                  text-white/50
+                "
+              >
+                0{index + 2}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex justify-between items-start gap-4">
+                <h3
+                  class="
+                    text-[#f8fafc]
+                    font-semibold
+                    leading-snug
+                  "
+                >
+                  {project.name}
+                </h3>
+
+                <span
+                  class="
+                    text-[#64748b]
+
+                    transition-all
+                    duration-300
+
+                    group-hover:text-[#38bdf8]
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                >
+                  ↗
+                </span>
+              </div>
+
+              <p
+                class="
+                  text-[#94a3b8]
+                  text-sm
+                  leading-6
+                  mt-2
+                "
+              >
+                {project.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-auto pt-5">
+                {
+                  project.tecnologies.map((technology) => (
+                    <span
+                      class="
+                        px-2.5
+                        py-1
+
+                        rounded-full
+
+                        border
+                        border-white/10
+
+                        bg-white/[0.025]
+
+                        text-[#94a3b8]
+                        text-[11px]
+                        font-mono
+                      "
+                    >
+                      {technology}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+          </a>
+        ))
+      }
     </div>
-  ))}
-</div>
+  </div>
+</section>
+
+<style>
+  .project-card {
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgb(56 189 248 / 0.3);
+
+    box-shadow:
+      0 20px 40px -20px rgb(0 0 0 / 0.8),
+      0 0 30px rgb(56 189 248 / 0.04);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: none;
+    }
+  }
+</style>
